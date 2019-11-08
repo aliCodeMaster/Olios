@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 export default class CustomImage extends Component {
     state = {
@@ -16,20 +17,19 @@ export default class CustomImage extends Component {
             )
     }
 
-    componentWillReceiveProps(nextProps, nextContext) {
+    UNSAFE_componentWillReceiveProps(nextProps, nextContext) {
         fetch(nextProps.url)
             .then(res => res.text())
-            .then(text =>
-                this.setState({
-                    image:text
-                })
-            )
+            .then(text => this.setState({image : text}));
     }
+
+    static propTypes = {
+        url : PropTypes.string.isRequired
+    };
 
     render() {
         const { loading, image} = this.state;
         const {url,...restProps}= this.props;
-
         if (loading) {
             return <div className="spinner" />;
         } else if (!image) {
@@ -40,7 +40,7 @@ export default class CustomImage extends Component {
             return <div className="svg-reader" dangerouslySetInnerHTML={{ __html: this.state.image }} {...restProps} />;
 
         }else {
-            return <img src={url} {...restProps}  />;
+            return <img src={url} {...restProps} alt="customImage" />;
         }
     }
 }

@@ -1,5 +1,6 @@
 module.exports = {
-    LoginPage : "/Login",
     HomePage : "/",
-    CartPage : "/Cart"
+    LoginPage : "/Login",
+    CartPage : "/Cart",
+    CategoryPage : "/Category"
 };

@@ -1,21 +1,48 @@
+@media (max-width: 992px) {
+    .Menu:first-of-type{
+        width: 100%;
+    }
+    .menu-item {
+        margin-left: 3rem;
+    }
+    .custom-tooltip {
+        display: none!important;
+    }
+    #sidebar {
+        position: fixed;
+    }
+    section.ant-layout#mainSection{
+        margin-top: 5rem;
+    }
+}
+@media (min-width: 992px) {
+    .Menu {
+        height : 50%;
+        flex-direction: column;
+    }
+    .menu-item {
+        margin-top: 2rem;
+    }
+}
 .Menu {
-    height: 50%;
     display: flex;
-    flex-direction: column;
 }
 .Menu:first-of-type {
-    margin-top: 3rem;
     justify-content: flex-start;
 }
 .Menu:last-of-type {
     justify-content: flex-end;
 }
-.menu-item {
-    margin-top: 2rem;
-}
 .menu-item i {
     font-size: 1.3rem;
     color: #d8d8d8;
+    transition: all 0.3s;
+}
+.menu-item i:hover {
+    color: #3b95ff;
+}
+.menu-item i:focus,.onPage {
+    color: #0125ff!important;
 }
 .custom-tooltip.ltr {
     left: 5rem!important;

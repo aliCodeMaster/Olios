@@ -1,8 +1,8 @@
-const LivingRoomSVG = require("./Image/Svg/LivingRoom.svg");
-const OfficeSVG = require("./Image/Svg/Office.svg");
-const KidsRoomSVG = require("./Image/Svg/KidsRoom.svg");
-const KitchenSVG = require("./Image/Svg/Kitchen.svg");
-const AccessoriesSVG = require("./Image/Svg/Accessories.svg");
+const LivingRoomSVG = require("../Image/Svg/LivingRoom.svg");
+const OfficeSVG = require("../Image/Svg/Office.svg");
+const KidsRoomSVG = require("../Image/Svg/KidsRoom.svg");
+const KitchenSVG = require("../Image/Svg/Kitchen.svg");
+const AccessoriesSVG = require("../Image/Svg/Accessories.svg");
 
 module.exports = {
     direction : "ltr",

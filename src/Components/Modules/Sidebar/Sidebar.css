@@ -1,0 +1,14 @@
+@media (max-width: 992px) {
+    #sidebar {
+        width: 100vw;
+        height: 5rem;
+        padding: 0 1rem;
+    }
+}
+@media (min-width: 992px) {
+    #sidebar {
+        width: 5rem;
+        height: 100vh;
+        padding: 1rem 0;
+    }
+}
