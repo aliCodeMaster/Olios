@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import App from "./App";
 import {direction} from './Configs/config';
+import {Provider} from "react-redux";
+import {createStore} from "redux";
+import {reducer} from "./redux/reducer/reducer";
 import 'antd/dist/antd.css';
 import './Css/bootstrap.custom.min.css';
 import './Css/style.css';
@@ -16,8 +19,11 @@ class Index extends Component {
     }
 
     render() {
+        const store = createStore(reducer);
         return (
-            < App />
+            <Provider store={store}>
+                < App />
+            </Provider>
         );
     }
 }

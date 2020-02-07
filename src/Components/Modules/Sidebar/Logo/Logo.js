@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import logo from '../../../../Image/LOGO.png';
+import logo from '../../../../assets/Image/LOGO.png';
 import {Popover} from "antd";
 import {direction, siteDescription, siteTitle} from "../../../../Configs/config";
 import {HomePage} from "../../../../Configs/links";

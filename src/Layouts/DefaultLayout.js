@@ -1,13 +1,26 @@
 import React from 'react';
 import {Layout, Breadcrumb} from 'antd';
-import {Sidebar, CategoryBar} from "../Components/module";
+import {Sidebar, CategoryBar, SearchOverlay} from "../Components/module";
 import {useLocation} from "react-router-dom";
+import {posts} from "../Configs/config";
+import {CategoryPage} from "../Configs/links";
 
 const {Content, Sider} = Layout;
 
 export function DefaultLayout(props) {
     function breadcrumbProcessor(location) {
-        return location.pathname.split('/').filter(value => value !== "");
+        const locationSplit = location.pathname.split('/');
+        if(locationSplit.filter(val => val.toLowerCase() === "product").length > 0){
+            const currentPost = posts.filter(val => val.slug === locationSplit.slice(-1)[0])[0];
+            if (currentPost)
+                return [CategoryPage.split("/")[1], currentPost.category, currentPost.title];
+            return locationSplit.filter(value => value !== "");
+        }
+        return locationSplit.filter(value => value !== "");
+    }
+    function processTheSearchOverlay(location) {
+        const hash = location.hash;
+        return hash === "#Search";
     }
     const location = useLocation();
     return (
@@ -28,6 +41,10 @@ export function DefaultLayout(props) {
                             ))
                         }
                     </Breadcrumb>
+                    {
+                        processTheSearchOverlay(location) &&
+                        <SearchOverlay />
+                    }
                     {props.children}
                 </Content>
                 <CategoryBar />

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Button, Carousel, Row} from "antd";
-import Slide1 from '../../../Image/SliderSlide.png';
+import Slide1 from '../../../assets/Image/SliderSlide.png';
 import './Home.css';
 
 class Home extends Component {

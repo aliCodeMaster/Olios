@@ -1,0 +1,31 @@
+.recommended-text{
+    font-size: 1.4rem;
+    transform: rotate(-90deg);
+    color: #a8a8a8;
+}
+.post-wrapper.single-page {
+    width: 30%;
+    padding: 0;
+}
+.post-wrapper.single-page h4 {
+    font-size: 1.2rem;
+}
+.post-wrapper.single-page p {
+    font-size: .8rem;
+}
+.post-wrapper.single-page .post-description {
+    height: fit-content;
+    padding: 0 4rem;
+}
+.post-wrapper.single-page .price {
+    display: none!important;
+}
+.post-wrapper.single-page img {
+    max-height: 8rem;
+    margin-bottom: .5rem;
+}
+.cost-text, .quantity-text {
+    font-size: .8rem;
+    font-weight: bold;
+    margin-bottom: -.3rem;
+}

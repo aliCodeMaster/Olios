@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import MenuElements from "./MenuElements/MenuElements";
 import {CartPage, HomePage, LoginPage} from "../../../../Configs/links";
 import {direction} from "../../../../Configs/config";
+import {withRouter} from "react-router-dom";
+import {connect} from "react-redux";
 
 class Menu extends Component {
     render() {
@@ -17,7 +19,7 @@ class Menu extends Component {
                 align : "top",
                 link : CartPage,
                 icon : "shopping-cart",
-                badgeNumber : 1
+                badgeNumber : this.props.Cart.length
             },
             {
                 name : "Search",
@@ -55,4 +57,9 @@ class Menu extends Component {
     }
 }
 
-export default Menu;
+const mapState = states => (
+    {
+        Cart : states.Cart
+    }
+);
+export default withRouter(connect(mapState)(Menu));

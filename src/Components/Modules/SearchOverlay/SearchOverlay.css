@@ -1,0 +1,26 @@
+.SearchOverlay{
+    background-color: rgba(255, 255, 255, .9);
+    position: fixed!important;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh!important;
+    padding: 10%;
+    z-index: 10;
+}
+.input-search input{
+    width: 100%;
+    font-size: 3rem;
+    background: transparent!important;
+    border : 0!important;
+    border-bottom: 1px solid #5a6268!important;
+    height: initial!important;
+    border-radius: 0!important;
+}
+.input-search input:focus{
+    box-shadow: none!important;
+}
+.input-search .ant-input-suffix{
+    zoom: 2;
+}
